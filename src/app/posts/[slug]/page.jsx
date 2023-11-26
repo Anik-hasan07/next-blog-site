@@ -1,3 +1,4 @@
+"use client"
 import Menu from "@/components/Menu/Menu";
 import styles from "./singlePage.module.css";
 import Image from "next/image";
@@ -21,6 +22,7 @@ const SinglePage = async ({ params }) => {
   const data = await getData(slug);
 
   return (
+    
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.textContainer}>
@@ -32,7 +34,7 @@ const SinglePage = async ({ params }) => {
               </div>
             )}
             <div className={styles.userTextContainer}>
-              <span className={styles.username}>{data?.user.name}</span>
+             {data?.user?.name&& <span className={styles.username}>{data?.user?.name}</span>}
               <span className={styles.date}>01.01.2024</span>
             </div>
           </div>

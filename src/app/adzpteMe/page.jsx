@@ -5,7 +5,6 @@ import styles from "./writePage.module.css";
 import { useEffect, useState } from "react";
 import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
 import {
   getStorage,
   ref,
@@ -14,23 +13,11 @@ import {
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
 import ReactQuill from "react-quill";
-
-// const getUser = async (role) => {
-//   const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
-//     cache: "no-store",
-//   });
-
-//   if (!res.ok) {
-//     throw new Error("Failed");
-//   }
-
-//   return res.json();
-// };
+import { useSession } from "next-auth/react";
 
 const WritePage = () => {
-  const { status } = useSession();
   const router = useRouter();
-
+  const { status } = useSession();
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState(null);
   const [media, setMedia] = useState("");

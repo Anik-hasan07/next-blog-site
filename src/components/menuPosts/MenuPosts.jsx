@@ -15,9 +15,11 @@ const MenuPosts = ({ withImage }) => {
         )}
         <div className={styles.textContainer}>
           <span className={`${styles.category} ${styles.travel}`}>Fashion</span>
+          <Link href="https://www.thedailystar.net/entertainment/tv-film/news/zahara-mitu-defends-joy-bangla-poster-after-backlash-3191566">
           <h3 className={styles.postTitle}>
           Zahara Mitu defends 'Joy Bangla' poster after backlash...
           </h3>
+          </Link>
           <div className={styles.detail}>
             <span className={styles.username}>Anik Hasan Bijoy</span>
             <span className={styles.date}> - 10.03.2023</span>
